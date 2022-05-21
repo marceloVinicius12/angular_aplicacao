@@ -6,7 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alunos.component.css']
 })
 export class AlunosComponent implements OnInit {
+public titulo = 'visualização de alunos'
 
+  alunos = [
+   ' jessica',
+    'paula',
+    'laura',
+    'maria',
+    'felipe',
+    'joao',
+    'thiago',
+
+
+  ]
   constructor() { }
 
   ngOnInit(): void {
