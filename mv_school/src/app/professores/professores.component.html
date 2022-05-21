@@ -1,7 +1,13 @@
-<h1>{{titulo}}</h1>
-<ul>
+<div *ngIf="professorSelecionado">
+  <h1>{{titulo}} : {{professorSelecionado}}</h1>
+  <button class="btn btn-primary btn-default"(click)="voltar()">voltar</button>
+  </div>
+  <br>
 
-</ul>
+  <div *ngIf="!professorSelecionado">
+
+    <table class="table table-hover">
+
 <table class="table table-hover">
   <thead>
     <tr>
@@ -12,13 +18,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let prof of professores">
+    <tr *ngFor="let prof of professores" style="cursor: pointer;" (click)="professorSelect(prof)">
       <th scope="row">{{prof.id}}</th>
       <td>{{prof.nome}}</td>
       <td>{{prof.disciplina}}</td>
-      
     </tr>
-
   </tbody>
 </table>
+
 
