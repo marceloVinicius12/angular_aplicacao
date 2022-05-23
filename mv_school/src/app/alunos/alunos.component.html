@@ -1,28 +1,55 @@
 
-<div *ngIf="alunoSelecionado">
-<h1>{{titulo}} : {{alunoSelecionado}}</h1>
+<div class="row">
+
+  <div class="col-sm-6" *ngIf="alunoSelecionado">
+
+    <div class="row">
+    <div class="col-md-10">
+      <h1>{{titulo}} : {{alunoSelecionado.nome}}</h1>
+    </div>
+
+    <div class="col-md-2 mt-2 justify-content-end">
+      <button class="btn btn-outline-danger btn-default"(click)="voltar()">Fechar</button>
+    </div>
+    </div>
+    <form>
+      <div class="form-group mt-3">
+        <label for="formGroupExampleInput">Nome :</label>
+        <input type="text" value="{{alunoSelecionado.nome}}" class="form-control" >
+      </div>
+      <div class="form-group mt-3">
+        <label for="formGroupExampleInput2">Sobrenome :</label>
+        <input type="text" value="{{alunoSelecionado.sobrenome}}" class="form-control" >
+      </div>
+      <div class="form-group mt-3">
+        <label for="formGroupExampleInput2">telefone :</label>
+        <input type="text" value="{{alunoSelecionado.telefone}}" class="form-control">
+      </div>
+    </form>
+    </div>
+    <br>
+    <div [ngClass]= "{'col-sm-6': alunoSelecionado ,'col-sm-12': !alunoSelecionado}">
+      <table class="table table-hover mt-5">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">nome</th>
+            <th scope="col">sobrenome</th>
+            <th scope="col">telefone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let aluno of alunos" style="cursor: pointer;" (click)="alunoSelect(aluno)">
+            <td scope="row">{{aluno.id}}</td>
+            <td >{{aluno.nome}}</td>
+            <td >{{aluno.sobrenome}}</td>
+            <td >{{aluno.telefone}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
 
 </div>
-<br>
-<div *ngIf="!alunoSelecionado">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">nome</th>
-        <th scope="col">sobrenome</th>
-        <th scope="col">telefone</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr  *ngFor="let aluno of alunos" style="cursor: pointer;" (click)="alunoSelect(aluno)">
-        <td scope="row">{{aluno.id}}</td>
-        <td scope="row">{{aluno.nome}}</td>
-        <td scope="row">{{aluno.sobrenome}}</td>
-        <td scope="row">{{aluno.telefone}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<button class="btn btn-primary btn-default"(click)="voltar()">voltar</button>
-
