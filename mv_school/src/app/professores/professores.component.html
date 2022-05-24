@@ -10,19 +10,22 @@
   <button class="btn btn-outline-danger btn-default"(click)="voltar()">Fechar</button>
   </div>
   </div>
-  <form>
+  <form  [formGroup]="professorForm" (submit)="professorSubmit()">
     <div class="form-group mt-3">
       <label for="formGroupExampleInput">Nome :</label>
-      <input type="text" value="{{professorSelecionado.nome}}" class="form-control" >
+      <input type="text" formControlName="nome" class="form-control" >
     </div>
     <div class="form-group mt-3">
       <label for="formGroupExampleInput2">disciplina :</label>
-      <input type="text"value="{{professorSelecionado.disciplina}}" class="form-control">
+      <input type="text" formControlName="disciplina" class="form-control">
     </div>
+    <div class="form-group mt-3">
+      
+      <button class="btn btn-primary" [disabled]="!professorForm.valid">enviar</button>
+      </div>
   </form>
   </div>
   <br>
-
   <div [ngClass]= "{'col-sm-6': professorSelecionado ,'col-sm-12': !professorSelecionado}">
 
     <div class="table table-hover">
@@ -33,7 +36,6 @@
       <th scope="col">#</th>
       <th scope="col">nome</th>
       <th scope="col">disciplina</th>
-
     </tr>
   </thead>
   <tbody>
