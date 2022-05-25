@@ -1,6 +1,8 @@
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Professor } from './../models/professor';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Template } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
   selector: 'app-professores',
@@ -8,6 +10,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./professores.component.css']
 })
 export class ProfessoresComponent implements OnInit {
+  public modalRef: BsModalRef;
  public professorForm : FormGroup
   public titulo = 'Professor'
   public professorSelecionado: Professor ;
@@ -21,19 +24,12 @@ public textSimple : string
   {id:5, nome: 'guto', disciplina:'informatica'},
   {id:6, nome: 'ana', disciplina:'geografia'},
 ]
-  constructor(private fb : FormBuilder) {
-    this.criarForm();
-  }
 
-  ngOnInit(): void {
-  }
-  criarForm(){
-    this.professorForm = this.fb.group({
-      nome : ['', Validators.required],
-      disciplina : ['',Validators.required],
-    });
-    }
-
+  constructor(private fb : FormBuilder, private modalService: BsModalService) {}
+      openModal(Template: TemplateRef<any>) {
+        this.modalRef = this.modalService.show(Template);
+      }
+    
     professorSubmit(){
       console.log(this.professorForm.value)
     }
@@ -45,6 +41,8 @@ public textSimple : string
       this.professorSelecionado = null;
     }
 
+    ngOnInit(): void {
+    }
 
 
 

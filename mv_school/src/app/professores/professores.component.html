@@ -1,5 +1,4 @@
 
-
 <div class="row">
   <div class="col-sm-6" *ngIf="professorSelecionado">
   <div class="row">
@@ -20,32 +19,52 @@
       <input type="text" formControlName="disciplina" class="form-control">
     </div>
     <div class="form-group mt-3">
-      
+
       <button class="btn btn-primary" [disabled]="!professorForm.valid">enviar</button>
       </div>
   </form>
   </div>
   <br>
-  <div [ngClass]= "{'col-sm-6': professorSelecionado ,'col-sm-12': !professorSelecionado}">
+  <div [ngClass]= "{'col-sm-6': professorSelecionado ,'col-sm-9 col-12': !professorSelecionado}">
 
     <div class="table table-hover">
 
-<table class="table table-hover">
+<table class="table table-hover mt-5">
   <thead>
     <tr>
+      <th scope="col" >Visualizar</th>
       <th scope="col">#</th>
       <th scope="col">nome</th>
       <th scope="col">disciplina</th>
+      <th scope="col">opções</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let prof of professores" style="cursor: pointer;" (click)="professorSelect(prof)">
-      <th scope="row">{{prof.id}}</th>
+    <tr *ngFor="let prof of professores">
+      <td><button  (click)="professorSelect(prof)" class="btn btn-outline-warning">detalhe</button></td>
+      <th scope="row" id="id">{{prof.id}}</th>
       <td>{{prof.nome}}</td>
       <td>{{prof.disciplina}}</td>
+      <td>
+        <div class="btn-group">
+          <button (click)="openModal(template)" class="btn btn-outline-primary">alunos</button>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>
 </div>
 </div>
-
+<div class="container">
+<ng-template #template >
+  <div class="modal-body">
+  <app-alunos></app-alunos>
+  </div>
+<div class="modal-footer">
+<button type="button" class="btn pull-right" aria-label="Close"
+(click)="modalRef?.hide()">
+Fechar
+</button>
+</div>
+</ng-template>
+</div>

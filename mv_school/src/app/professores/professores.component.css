@@ -1,0 +1,17 @@
+table
+{
+font-size: 1.1em;
+
+}
+thead
+{
+  background-color: rgb(69, 66, 66);
+  color: white;
+}
+
+.template{
+width: 100%;
+}
+.container{
+  width: 1200px;
+}
