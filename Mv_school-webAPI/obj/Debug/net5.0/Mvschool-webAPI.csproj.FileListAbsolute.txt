@@ -1,0 +1,7 @@
+C:\Users\marcelo.lima\Documents\GitHub\angular_aplicacao\Mv_school-webAPI\obj\Debug\net5.0\Mvschool-webAPI.csproj.AssemblyReference.cache
+C:\Users\marcelo.lima\Documents\GitHub\angular_aplicacao\Mv_school-webAPI\obj\Debug\net5.0\Mvschool-webAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marcelo.lima\Documents\GitHub\angular_aplicacao\Mv_school-webAPI\obj\Debug\net5.0\Mvschool-webAPI.AssemblyInfoInputs.cache
+C:\Users\marcelo.lima\Documents\GitHub\angular_aplicacao\Mv_school-webAPI\obj\Debug\net5.0\Mvschool-webAPI.AssemblyInfo.cs
+C:\Users\marcelo.lima\Documents\GitHub\angular_aplicacao\Mv_school-webAPI\obj\Debug\net5.0\Mvschool-webAPI.csproj.CoreCompileInputs.cache
+C:\Users\marcelo.lima\Documents\GitHub\angular_aplicacao\Mv_school-webAPI\obj\Debug\net5.0\Mvschool-webAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\marcelo.lima\Documents\GitHub\angular_aplicacao\Mv_school-webAPI\obj\Debug\net5.0\Mvschool-webAPI.MvcApplicationPartsAssemblyInfo.cache

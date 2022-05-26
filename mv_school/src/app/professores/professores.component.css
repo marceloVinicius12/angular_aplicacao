@@ -8,10 +8,8 @@ thead
   background-color: rgb(69, 66, 66);
   color: white;
 }
-
 .template{
-width: 100%;
+  min-width: 1200px;
 }
-.container{
-  width: 1200px;
-}
+
+

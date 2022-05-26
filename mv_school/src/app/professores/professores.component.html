@@ -25,14 +25,14 @@
   </form>
   </div>
   <br>
-  <div [ngClass]= "{'col-sm-6': professorSelecionado ,'col-sm-9 col-12': !professorSelecionado}">
+  <div [ngClass]= "{'col-sm-6': professorSelecionado ,'col-sm-9 ': !professorSelecionado}">
 
     <div class="table table-hover">
 
 <table class="table table-hover mt-5">
   <thead>
     <tr>
-      <th scope="col" >Visualizar</th>
+      <th scope="col">Visualizar</th>
       <th scope="col">#</th>
       <th scope="col">nome</th>
       <th scope="col">disciplina</th>
@@ -55,10 +55,11 @@
 </table>
 </div>
 </div>
-<div class="container">
-<ng-template #template >
+
+<ng-template #template class="template">
   <div class="modal-body">
-  <app-alunos></app-alunos>
+  <app-alunos class="alunos">
+  </app-alunos>
   </div>
 <div class="modal-footer">
 <button type="button" class="btn pull-right" aria-label="Close"
@@ -67,4 +68,4 @@ Fechar
 </button>
 </div>
 </ng-template>
-</div>
+
